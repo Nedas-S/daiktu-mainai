@@ -1,12 +1,12 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
 const uploadDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
-require('dotenv').config();
+require("dotenv").config();
 const app = require("./app");
 const { sequelize } = require("./models");
 

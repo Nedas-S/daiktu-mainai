@@ -3,7 +3,7 @@ const sequelize = require("../config/db");
 
 const SwapProposal = sequelize.define("SwapProposal", {
   status: {
-    type: DataTypes.STRING, // pvz.: pending, accepted, rejected
+    type: DataTypes.STRING, 
     defaultValue: "pending",
   },
 });

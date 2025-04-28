@@ -54,5 +54,5 @@ const loginUser = async (req, res) => {
   }
 };
 
-// Eksportuojam funkcijas
+// Eksportuoja funkcijas
 module.exports = { registerUser, loginUser };
