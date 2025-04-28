@@ -1,11 +1,19 @@
-require("dotenv").config();
+const path = require('path');
+const fs = require('fs');
+
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+require('dotenv').config();
 const app = require("./app");
-const { sequelize } = require("./models"); // importuoja iš models/index.js
+const { sequelize } = require("./models");
 
 const PORT = process.env.PORT || 5000;
 
 sequelize
-  .sync({ alter: true }) // sukuria arba atnaujina lenteles
+  .sync({ alter: true })
   .then(() => {
     console.log("✅ Lentelės sukurtos ir DB prijungta");
     app.listen(PORT, () => {
@@ -15,10 +23,3 @@ sequelize
   .catch((err) => {
     console.error("❌ Klaida jungiantis prie DB:", err.message);
   });
-const express = require("express");
-const router = express.Router();
-const { registerUser } = require("./controllers/userController");
-
-router.post("/register", registerUser);
-
-module.exports = router;

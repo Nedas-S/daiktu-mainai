@@ -6,7 +6,14 @@ const Item = sequelize.define("Item", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  description: DataTypes.TEXT,
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  images: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
   create_at: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
