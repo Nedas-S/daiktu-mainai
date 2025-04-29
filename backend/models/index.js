@@ -7,7 +7,6 @@ const Image = require("./Image");
 const Message = require("./Message");
 const SwapProposal = require("./SwapProposal");
 
-// Santykiai
 User.hasMany(Item);
 Item.belongsTo(User);
 
